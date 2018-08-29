@@ -1,0 +1,46 @@
+.gallery{
+    
+    display: grid;
+    grid-template-rows: 1fr 1f;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 2vw;
+    
+}
+.small_photo
+{
+    border: 5px solid #fff;
+    border-bottom: 15px solid #fff;
+    box-shadow: 3px 3px 3px #699;
+}
+#content{
+    display: inline-block;
+    border: 10px solid #fff;
+    border-bottom: 45px solid #fff;
+ 
+    box-shadow: 3px 3px 3px #699; 
+}
+h1{
+    text-align: center;
+    color:darkcyan;
+}
+
+input[type=submit] {
+    padding:5px 15px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+.a{
+    
+    display: block;
+    margin-top: 20px;
+}
+input[type=file]{
+        
+}
+form{
+    
+   
+}
