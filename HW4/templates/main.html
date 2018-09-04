@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+    <head>
+        <title> HW4 </title>
+        <link rel="stylesheet" href = '../style/css/style.css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script >
+            $(document).ready(function(){
+            var inProcess = false;
+            var num = 20;
+            $(window).scroll(function() {
+                
+                if($(window).scrollTop() + $(window).height() >= $(document).height() && !inProcess) {
+                 //складываем расстояние между полосой прокрутки и высотой видимого окна
+                 //и сравниваем с действительной высотой окна, если условие выполняется,
+                 //то конец страницы достигрут
+                inProgress = true;
+                    $.ajax({
+                        url: '../engine/load.php',
+                        method: 'GET',
+                        data: {"num" : num},
+                        BeforeSend: function(){
+                            inProcess = true;
+                        }
+                    }).done(function(data){
+                         
+                        data = JSON.parse(data);
+                        console.log(data);
+                        if(data.length>0){
+                            $.each(data, function(index, data){
+                                 
+                                $("#gallery").append("<div id='small_img'><img src='" + data.img_small + "' > </div>");
+                            });
+                            inProcess = false;
+                            num+=10;
+                        }
+                        
+                    });
+
+                }
+            });
+        });
+  
+        </script>
+    </head>
+    <body>
+       <h1>HW4</h1>
+        <div id="gallery">
+            
+            {% for item in data %}
+            <div id="small_photo">
+                    <img src='{{ item.img_small }}' alt='{{item.name}}' >  
+                
+            </div>
+               
+            {% endfor %}
+        </div>
+    
+        
+    </body>
+</html>
