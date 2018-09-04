@@ -4,7 +4,6 @@ require_once 'lib/Twig/Autoloader.php';
 require_once 'config/DB.class.php';
 require_once 'config/config.php';
 Twig_Autoloader::register();
-
   
 try {
     
