@@ -2,8 +2,8 @@
 
 return [
       '' => [
-        'controller'=>'main',
-        'action'=>'index',
+        'controller' => 'main',
+        'action' => 'index',
     ],
     'account/login' => [
         'controller' => 'account',

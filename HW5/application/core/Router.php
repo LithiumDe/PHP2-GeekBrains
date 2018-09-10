@@ -14,8 +14,8 @@ class Router
                
     }
     public function add($route, $params){
-        $route = '#^'.$route.'$#';
-        $this->routes[$route] = $params;
+        $route = '#^'.$route.'$#';//регулярное выражение поиска маршрута
+        $this -> routes[$route] = $params;
         
     }
     //Функция, которая проверяет существует ли маршрут
